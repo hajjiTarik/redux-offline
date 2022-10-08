@@ -9,7 +9,9 @@
     "flow:stop": "flow stop",
     "flow": "flow; test $? -eq 0 -o $? -eq 2",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "watch": "npm run build -- --watch"
+    "watch": "npm run build -- --watch",
+    "prepare": "yarn run snyk-protect",
+    "snyk-protect": "snyk-protect"
   },
   "repository": {
     "type": "git",
@@ -43,9 +45,11 @@
     "redux-logger": "^2.8.2"
   },
   "dependencies": {
-    "redux-persist": "^4.5.0"
+    "redux-persist": "^4.5.0",
+    "@snyk/protect": "latest"
   },
   "peerDependencies": {
     "redux": ">=3"
-  }
+  },
+  "snyk": true
 }
